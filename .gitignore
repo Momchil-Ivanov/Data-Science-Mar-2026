@@ -13,3 +13,11 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
+# Data files — fetched at runtime via API, not committed
+data/*.json
+data/*.csv
+data/*.parquet
+
+# Local reference notebook — never pushed
+notebook_copy.ipynb
