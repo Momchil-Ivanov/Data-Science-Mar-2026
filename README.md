@@ -25,12 +25,15 @@ jupyter notebook notebook.ipynb
 
 ```
 .
-├── notebook.ipynb        # Main analysis notebook
-├── requirements.txt      # Python dependencies
-└── README.md
+├── notebook.ipynb           # Main analysis notebook
+├── requirements.txt         # Python dependencies
+├── README.md
+└── data/
+    ├── ct_raw.csv.gz        # Snapshot: ClinicalTrials.gov (study × country rows, gzip CSV)
+    └── wb_snapshot.csv      # Snapshot: World Bank country metadata + 2023 population & GDP
 ```
 
-> **Reproducibility note:** No data files are stored in this repository. All data is fetched from public APIs at runtime. Running Section 1 of the notebook from top to bottom recreates the full dataset.
+> **Reproducibility note:** Committed files under `data/` freeze the raw API responses so results do not drift when ClinicalTrials.gov or the World Bank change. The snapshot date is stated in Section 0 of the notebook (update it if you regenerate snapshots). Section 1 loads from `data/` by default (`USE_CACHE = True` in Section 1.1). To refresh from the live APIs, set `USE_CACHE = False`, run Sections 1.1–1.2, then commit the updated `data/` files.
 
 ## Methods
 

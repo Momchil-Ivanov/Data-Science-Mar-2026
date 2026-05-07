@@ -14,9 +14,9 @@ env/
 .DS_Store
 Thumbs.db
 
-# Data files — fetched at runtime via API, not committed
+# Data files — large or sensitive files not committed
+# Committed snapshots: data/ct_raw.csv.gz, data/wb_snapshot.csv
 data/*.json
-data/*.csv
 data/*.parquet
 
 # Local reference notebook — never pushed
