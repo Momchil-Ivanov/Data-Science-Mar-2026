@@ -33,7 +33,7 @@ jupyter notebook notebook.ipynb
     └── wb_snapshot.csv      # Snapshot: World Bank country metadata + 2023 population & GDP
 ```
 
-> **Reproducibility note:** Committed files under `data/` freeze the raw API responses so results do not drift when ClinicalTrials.gov or the World Bank change. The snapshot date is stated in Section 0 of the notebook (update it if you regenerate snapshots). Section 1 loads from `data/` by default (`USE_CACHE = True` in Section 1.1). To refresh from the live APIs, set `USE_CACHE = False`, run Sections 1.1–1.2, then commit the updated `data/` files.
+> **Reproducibility note:** Committed files under `data/` freeze the raw API responses (ClinicalTrials.gov + World Bank extracts) so results do not drift when those services change downstream. Those snapshots match the **8 May 2026** freeze date stated in Section 0 of the notebook — update Section 0 if you regenerate them. Section 1 loads from `data/` by default (`USE_CACHE = True` in Section 1.1). To refresh from the live APIs, set `USE_CACHE = False`, run Sections 1.1–1.2, then commit the updated `data/` files.
 
 ## Methods
 
